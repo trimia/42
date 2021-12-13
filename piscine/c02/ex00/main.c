@@ -18,6 +18,7 @@ int main()
     ft_putstr(b);
     ft_putstr(c);
     ft_strcpy(c,b);
+	strcpy(c,b)
     ft_putstr(c);
     return(0);
 }

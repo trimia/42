@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmariani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 18:03:40 by mmariani          #+#    #+#             */
-/*   Updated: 2021/12/09 14:06:58 by mmariani         ###   ########.fr       */
+/*   Created: 2021/12/08 17:46:48 by mmariani          #+#    #+#             */
+/*   Updated: 2021/12/09 21:24:51 by mmariani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	put_char(char a)
+char	*ft_strstr(char *str, char *to_find)
 {
-	write(1, &a, 1);
-}
+	int	i;
+	int	j;
+	int	len;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	i = 0;
+	j = 0;
+	len = 0;
+	while (to_find[len] != '\0')
+		len++;
+	if (*to_find == '\0')
+		return (str);
+	while (str[i] != '\0')
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		if (str[i] == to_find[j])
+		{
+			j++;
+			i++;
+			if (to_find[j] == '\0')
+				return (&str[i - j]);
+			continue ;
+		}
+	i++;
+	j = 0;
 	}
-	if (nb < 0)
-	{
-		nb = -nb;
-		put_char('-');
-	}
-	if (nb < 9)
-	{
-		nb = nb + 48;
-		put_char(nb);
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
+	return (0);
 }

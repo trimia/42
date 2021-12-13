@@ -6,7 +6,7 @@
 /*   By: mmariani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:45:51 by mmariani          #+#    #+#             */
-/*   Updated: 2021/12/07 22:12:15 by mmariani         ###   ########.fr       */
+/*   Updated: 2021/12/09 15:57:09 by mmariani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ char	*ft_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
-	src[i] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }

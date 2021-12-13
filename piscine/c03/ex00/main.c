@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmariani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 18:03:40 by mmariani          #+#    #+#             */
-/*   Updated: 2021/12/09 14:06:58 by mmariani         ###   ########.fr       */
+/*   Created: 2021/12/08 12:18:42 by mmariani          #+#    #+#             */
+/*   Updated: 2021/12/09 21:10:51 by mmariani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 
-void	put_char(char a)
-{
-	write(1, &a, 1);
-}
+int		ft_strcmp(char *s1, char *s2);
 
-void	ft_putnbr(int nb)
+int		main()
 {
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		nb = -nb;
-		put_char('-');
-	}
-	if (nb < 9)
-	{
-		nb = nb + 48;
-		put_char(nb);
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
+	printf("%d\n", ft_strcmp("zippo", "pippo"));
+	printf("%d\n", ft_strcmp("pippooo", "pluto"));
+	printf("%d\n\n\n", ft_strcmp("pippo", "plutoooo"));
+	printf("%d\n", strcmp("zippo", "pippo"));
+	printf("%d\n", strcmp("pippooo", "pluto"));
+	printf("%d\n", strcmp("pippo", "plutoooo"));
 }

@@ -6,7 +6,7 @@
 /*   By: mmariani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 18:03:40 by mmariani          #+#    #+#             */
-/*   Updated: 2021/12/09 14:06:58 by mmariani         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:06:14 by mmariani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putnbr(int nb)
 		nb = -nb;
 		put_char('-');
 	}
-	if (nb < 9)
+	if (nb < 10)
 	{
 		nb = nb + 48;
 		put_char(nb);
